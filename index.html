@@ -119,13 +119,13 @@
             </div>
             <div>
               <div class="flex flex-wrap items-center gap-1.5 cursor-pointer" onclick="openProfileModal()">
-                <h1 class="text-xl font-black tracking-tight text-white" id="headerTitle">Barbería · Nico</h1>
-                <span id="turneroHeaderBadge" class="text-[10px] text-zinc-400 bg-zinc-800 border border-zinc-700 px-2 py-0.5 rounded-full font-bold transition-colors">📅 Turnero OFF</span>
+                <h1 class="text-xl font-bold tracking-tight text-white" id="headerTitle">Barbería · Nico</h1>
+                <span id="turneroHeaderBadge" class="text-[10px] text-zinc-400 bg-zinc-800 border border-zinc-700 px-2 py-0.5 rounded-full font-bold transition-colors">Turnero OFF</span>
               </div>
-              <p class="text-xs font-semibold text-amber-500/90 tracking-wide flex items-center gap-1.5" id="headerSubtitle">
-                <span>mis clientes 💈</span>
+              <p class="text-xs font-semibold text-amber-500 tracking-wide flex items-center gap-1.5" id="headerSubtitle">
+                <span>Cortes, Fade & Barba</span>
                 <span class="text-zinc-600">·</span>
-                <span class="text-[11px] font-medium text-zinc-400" id="argClock">🇦🇷 --:-- hs</span>
+                <span class="text-[11px] font-medium text-zinc-400" id="argClock">--:-- hs</span>
               </p>
             </div>
           </div>
@@ -140,14 +140,17 @@
             </button>
 
             <!-- QR Cobro & Negocio Button -->
-            <button onclick="openBusinessQrModal()" class="w-10 h-10 rounded-full bg-[#18191E] border border-amber-500/40 flex items-center justify-center text-amber-400 hover:bg-zinc-800 active:scale-95 transition-transform shadow-sm" title="Cobrar con QR / Turnero mostrador">
-              <span class="text-base font-black">📷</span>
+            <button onclick="openBusinessQrModal()" class="w-10 h-10 rounded-full bg-[#18191E] border border-zinc-700 flex items-center justify-center text-amber-500 hover:bg-zinc-800 active:scale-95 transition-transform shadow-sm" title="Cobrar con QR / Turnero mostrador">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path>
+              </svg>
             </button>
 
-            <!-- Config Button -->
             <!-- Control Manual de Horarios / Agenda -->
-            <button onclick="openOwnerAgendaModal()" class="w-10 h-10 rounded-full bg-[#18191E] border border-amber-500/40 flex items-center justify-center text-amber-400 hover:bg-zinc-800 active:scale-95 transition-transform shadow-sm" title="Control Manual de Agenda y Horarios (Ocupar / Liberar)">
-              <span class="text-base font-black">📅</span>
+            <button onclick="openOwnerAgendaModal()" class="w-10 h-10 rounded-full bg-[#18191E] border border-zinc-700 flex items-center justify-center text-amber-500 hover:bg-zinc-800 active:scale-95 transition-transform shadow-sm" title="Control Manual de Agenda y Horarios (Ocupar / Liberar)">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
             </button>
 
             <button onclick="openProfileModal()" class="w-10 h-10 rounded-full bg-[#18191E] border border-zinc-700 flex items-center justify-center text-zinc-300 hover:bg-zinc-800 active:scale-95 transition-transform shadow-sm" title="Ajustes y Turnero">
@@ -204,20 +207,17 @@
 
         <!-- Filter Chips (Wrapped so none get cut off) -->
         <div class="flex flex-wrap items-center gap-1.5 mt-3 pt-0.5">
-          <button onclick="setFilter('all')" id="filter-all" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap bg-amber-500 text-zinc-950 transition-all shadow-sm">
+          <button onclick="setFilter('all')" id="filter-all" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap bg-amber-500 text-zinc-950 transition-all shadow-sm">
             Todos
           </button>
-          <button onclick="setFilter('due')" id="filter-due" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
-            ⏰ Toca Corte
+          <button onclick="setFilter('due')" id="filter-due" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
+            Toca Corte
           </button>
-          <button onclick="setFilter('beard')" id="filter-beard" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
-            🪒 Con Barba
+          <button onclick="setFilter('beard')" id="filter-beard" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
+            Con Barba
           </button>
-          <button onclick="setFilter('debt')" id="filter-debt" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
-            💵 Con Saldo
-          </button>
-          <button onclick="setFilter('paid')" id="filter-paid" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
-            ✓ Al Día
+          <button onclick="setFilter('debt')" id="filter-debt" class="filter-pill px-2.5 py-1 rounded-full text-[11px] font-semibold whitespace-nowrap bg-[#18191E] text-zinc-400 border border-zinc-800 transition-all">
+            Con Saldo
           </button>
         </div>
       </header>
@@ -357,29 +357,29 @@
               <span class="text-3xl" id="loyaltyAvatar">💈</span>
             </div>
           </div>
-          <h1 class="text-xl font-black text-white tracking-tight" id="loyaltySalonTitle">Barbería · Nico</h1>
-          <p class="text-[11px] font-bold uppercase tracking-widest text-amber-400">Club VIP de Clientes</p>
+          <h1 class="text-xl font-bold text-white tracking-tight" id="loyaltySalonTitle">Barbería · Nico</h1>
+          <p class="text-[11px] font-semibold uppercase tracking-widest text-amber-500">Tarjeta de Fidelización</p>
         </div>
 
         <!-- TARJETA VIP PRINCIPAL -->
-        <div class="bg-gradient-to-b from-[#18191E] to-[#121316] rounded-3xl p-5 border-2 border-amber-500/40 shadow-2xl relative overflow-hidden space-y-4">
+        <div class="bg-[#18191E] rounded-3xl p-5 border border-zinc-800 shadow-sm relative overflow-hidden space-y-4">
           <!-- Decoración sutil de fondo -->
-          <div class="absolute -right-8 -bottom-8 text-8xl text-zinc-800/20 select-none pointer-events-none">✂️</div>
+          <div class="absolute -right-8 -bottom-8 text-8xl text-zinc-800/10 select-none pointer-events-none">✂️</div>
 
-          <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+          <div class="flex items-center justify-between border-b border-zinc-800/80 pb-3">
             <div>
-              <span class="text-[10px] font-black uppercase tracking-wider text-zinc-400 block">Tarjeta Oficial</span>
-              <h2 class="text-lg font-black text-amber-400" id="loyaltyClientName">Mateo</h2>
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 block">Tarjeta Oficial</span>
+              <h2 class="text-lg font-bold text-amber-400" id="loyaltyClientName">Mateo</h2>
             </div>
             <div class="text-right">
-              <span class="text-[10px] font-black uppercase tracking-wider text-zinc-400 block">Progreso</span>
-              <span class="text-sm font-black text-white bg-zinc-800 px-2.5 py-0.5 rounded-full border border-zinc-700" id="loyaltyStampsRatio">4 / 6</span>
+              <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 block">Progreso</span>
+              <span class="text-sm font-bold text-amber-400 bg-amber-950/40 px-2.5 py-0.5 rounded-full border border-amber-500/30" id="loyaltyStampsRatio">4 / 6</span>
             </div>
           </div>
 
           <!-- Cuadrícula interactiva de Sellos -->
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider text-zinc-400 block mb-2 text-center">Tus sellos acumulados</span>
+            <span class="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 block mb-2 text-center">Tus sellos acumulados</span>
             <div id="loyaltyStampsGrid" class="grid grid-cols-3 gap-2.5 py-1">
               <!-- Se generará dinámicamente -->
             </div>
@@ -387,23 +387,23 @@
 
           <!-- Barra de progreso -->
           <div class="space-y-1.5 pt-1">
-            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden border border-zinc-700">
-              <div id="loyaltyProgressBar" class="h-full bg-gradient-to-r from-amber-500 to-amber-400 transition-all duration-500 rounded-full" style="width: 66%;"></div>
+            <div class="w-full bg-zinc-800 h-2.5 rounded-full overflow-hidden border border-zinc-700/60">
+              <div id="loyaltyProgressBar" class="h-full bg-amber-500 transition-all duration-500 rounded-full" style="width: 66%;"></div>
             </div>
-            <p class="text-center text-xs font-bold text-zinc-300" id="loyaltyProgressHint">¡Llevás 4 cortes! Te faltan solo 2 para tu premio.</p>
+            <p class="text-center text-xs font-medium text-zinc-300" id="loyaltyProgressHint">¡Llevás 4 cortes! Te faltan solo 2 para tu premio.</p>
           </div>
 
           <!-- Caja de Premio -->
-          <div id="loyaltyRewardBox" class="bg-amber-950/40 border border-amber-500/50 rounded-2xl p-3 text-center space-y-0.5">
-            <span class="text-[10px] font-black uppercase tracking-wider text-amber-400 block">🎁 Tu Premio al Completar</span>
-            <p class="text-sm font-black text-white" id="loyaltyRewardText">Un corte gratis</p>
+          <div id="loyaltyRewardBox" class="bg-[#121316] border border-zinc-800 rounded-2xl p-3 text-center space-y-0.5">
+            <span class="text-[10px] font-semibold uppercase tracking-wider text-amber-500 block">Premio al Completar</span>
+            <p class="text-sm font-bold text-white" id="loyaltyRewardText">Un corte gratis</p>
           </div>
 
           <!-- Cartel de Premio Desbloqueado (Solo si completó todos los sellos) -->
-          <div id="loyaltyUnlockedBox" class="bg-gradient-to-r from-amber-500 to-amber-600 text-zinc-950 p-4 rounded-2xl text-center shadow-lg hidden space-y-1 animate-bounce">
+          <div id="loyaltyUnlockedBox" class="bg-amber-500 text-zinc-950 p-4 rounded-2xl text-center shadow-sm hidden space-y-1">
             <span class="text-2xl block">🏆</span>
-            <h3 class="text-base font-black uppercase tracking-tight">¡PREMIO DESBLOQUEADO!</h3>
-            <p class="text-xs font-bold leading-tight">¡Completaste tu tarjeta! Presentá esta pantalla en la barbería para canjear tu premio.</p>
+            <h3 class="text-base font-bold uppercase tracking-tight">¡PREMIO DESBLOQUEADO!</h3>
+            <p class="text-xs font-medium leading-tight">¡Completaste tu tarjeta! Presentá esta pantalla en la barbería para canjear tu premio.</p>
           </div>
         </div>
 
@@ -915,7 +915,7 @@
       <div class="bg-amber-950/20 border border-amber-500/30 rounded-2xl p-4 space-y-3">
         <div class="flex items-center justify-between">
           <div class="flex items-center gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-sm ring-2 ring-emerald-500/20"></span>
             <span class="text-xs font-black uppercase tracking-wider text-amber-400">Google Drive Conectado</span>
           </div>
           <span id="cloudSyncBadge" class="text-[10px] font-black bg-emerald-950 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full">Automático ✓</span>
@@ -1172,9 +1172,9 @@
           id="btnRedeemRewardInModal" 
           type="button" 
           onclick="redeemCurrentClientReward()" 
-          class="w-full py-2.5 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 font-black text-xs rounded-xl shadow-lg active:scale-95 transition-all flex items-center justify-center gap-1.5 hidden animate-pulse"
+          class="w-full py-2.5 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-bold text-xs rounded-xl shadow-sm active:scale-95 transition-all flex items-center justify-center gap-1.5 hidden"
         >
-          <span>🏆 Canjear Premio (Reiniciar a 0 sellos)</span>
+          <span>Canjear Premio (Reiniciar a 0 sellos)</span>
         </button>
       </div>
 
@@ -1620,14 +1620,14 @@
                   ${settings.loyaltyEnabled ? `
                     <div class="mt-2 flex items-center gap-2">
                       ${(c.stamps || 0) >= (settings.loyaltyTarget || 6) ? `
-                        <button onclick="event.stopPropagation(); openClientLoyaltyModal('${c.id}')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-black bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-zinc-950 shadow-md shadow-amber-500/20 active:scale-95 transition-all animate-pulse" title="¡Premio listo para canjear!">
-                          <span>🏆 ¡Premio Disponible (${c.stamps || 0}/${settings.loyaltyTarget || 6})!</span>
-                          <span class="text-[10px] bg-zinc-950/20 px-1.5 py-0.5 rounded-md font-bold">Ver 🎁</span>
+                        <button onclick="event.stopPropagation(); openClientLoyaltyModal('${c.id}')" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-400 text-zinc-950 shadow-sm active:scale-95 transition-all" title="Premio listo para canjear">
+                          <span>Premio Listo (${c.stamps || 0}/${settings.loyaltyTarget || 6})</span>
+                          <span class="text-[10px] bg-zinc-950/20 px-1.5 py-0.5 rounded-md font-bold">Ver</span>
                         </button>
                       ` : `
-                        <button onclick="event.stopPropagation(); openClientLoyaltyModal('${c.id}')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-bold bg-zinc-800 hover:bg-zinc-700 text-amber-400 border border-zinc-700 active:scale-95 transition-all" title="Ver tarjeta de fidelidad">
-                          <span>✂️ ${c.stamps || 0}/${settings.loyaltyTarget || 6} sellos</span>
-                          <span class="text-[10px] text-zinc-400 hover:text-white">Tarjeta 📲</span>
+                        <button onclick="event.stopPropagation(); openClientLoyaltyModal('${c.id}')" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl text-xs font-semibold bg-zinc-800 hover:bg-zinc-700 text-amber-400 border border-zinc-700/80 active:scale-95 transition-all" title="Ver tarjeta de fidelidad">
+                          <span>${c.stamps || 0}/${settings.loyaltyTarget || 6} sellos</span>
+                          <span class="text-[10px] text-zinc-400">Tarjeta</span>
                         </button>
                       `}
                     </div>
@@ -1712,6 +1712,25 @@
     }
 
     // WhatsApp Action
+    // Normalización de celular argentino (+54 9 ...) para WhatsApp infalible
+    function formatArgentineWhatsApp(rawPhone) {
+      let cleaned = String(rawPhone || '').replace(/\D/g, '');
+      if (!cleaned) return '';
+      if (cleaned.startsWith('549')) return cleaned;
+      if (cleaned.startsWith('54')) {
+        cleaned = cleaned.substring(2);
+        if (!cleaned.startsWith('9')) cleaned = '9' + cleaned;
+        return '54' + cleaned;
+      }
+      if (cleaned.startsWith('15') && cleaned.length === 10) {
+        cleaned = cleaned.substring(2);
+      }
+      if (!cleaned.startsWith('9')) {
+        cleaned = '9' + cleaned;
+      }
+      return '54' + cleaned;
+    }
+
     function sendWhatsAppReminder(clientId) {
       const client = clients.find(c => c.id === clientId);
       if (!client) return;
@@ -1731,13 +1750,15 @@
         text += `\n\nPodés elegir tu día y horario acá:\n${bookingUrl}`;
       }
 
-      let phone = (client.phone || '').replace(/[^0-9]/g, '');
+      let phone = formatArgentineWhatsApp(client.phone);
 
       client.lastReminderSent = new Date().toISOString();
       persistData();
       renderClients();
 
-      const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+      const waUrl = phone
+        ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(text)}`
+        : `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
       window.open(waUrl, '_blank');
     }
 
@@ -2281,10 +2302,10 @@
 
       const msg = `¡Hola ${cleanSalon}! Soy *${cleanClient}*.\nQuiero reservar mi turno desde el turnero online:\n\n• *Servicio:* ${srvText}\n• *Día:* ${bookingState.selectedDateLabel}\n• *Horario:* ${bookingState.selectedHour} hs\n\n¿Me confirmás si está disponible? ¡Gracias!`;
 
-      const phone = (bookingState.salonPhone || '').replace(/[^0-9]/g, '');
+      const phone = formatArgentineWhatsApp(bookingState.salonPhone);
       const waUrl = phone 
-        ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
-        : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+        ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`
+        : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
       window.open(waUrl, '_blank');
     }
 
@@ -2721,8 +2742,10 @@
       if (currentCobroClientId) {
         const c = clients.find(item => item.id === currentCobroClientId);
         if (c && c.phone) {
-          const cleanPhone = c.phone.replace(/[^0-9]/g, '');
-          const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
+          const cleanPhone = formatArgentineWhatsApp(c.phone);
+          const waUrl = cleanPhone 
+            ? `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodeURIComponent(msg)}`
+            : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
           window.open(waUrl, '_blank');
           return;
         }
@@ -2899,8 +2922,10 @@ ${url}
                 `¡Muchas gracias por elegirnos siempre!`;
 
       if (client.phone) {
-        const cleanPhone = client.phone.replace(/[^0-9]/g, '');
-        const waUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(msg)}`;
+        const cleanPhone = formatArgentineWhatsApp(client.phone);
+        const waUrl = cleanPhone 
+          ? `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodeURIComponent(msg)}`
+          : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
         window.open(waUrl, '_blank');
       } else {
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -2967,8 +2992,8 @@ ${url}
         const isStamped = i <= stamps;
         const div = document.createElement('div');
         div.className = isStamped
-          ? 'aspect-square rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 border border-amber-300 shadow-md shadow-amber-500/20 flex flex-col items-center justify-center text-zinc-950 p-2 transform hover:scale-105 transition-transform'
-          : 'aspect-square rounded-2xl bg-zinc-900/90 border-2 border-dashed border-zinc-700/80 flex flex-col items-center justify-center text-zinc-600 p-2';
+          ? 'aspect-square rounded-2xl bg-amber-500 border border-amber-600 shadow-sm flex flex-col items-center justify-center text-zinc-950 p-2 transition-transform'
+          : 'aspect-square rounded-2xl bg-zinc-900/90 border border-dashed border-zinc-700/80 flex flex-col items-center justify-center text-zinc-600 p-2';
         
         div.innerHTML = isStamped
           ? `<span class="text-2xl leading-none">✂️</span><span class="text-[9px] font-black uppercase tracking-wider mt-1 bg-zinc-950/20 px-1 rounded text-zinc-950">OK ✓</span>`
@@ -3012,16 +3037,14 @@ ${url}
     function claimLoyaltyRewardWhatsApp() {
       const salon = currentLoyaltyState.salonName || 'Barbería · Nico';
       const phone = (currentLoyaltyState.salonPhone || '').replace(/[^0-9]/g, '');
-      const client = currentLoyaltyState.clientName || 'Cliente VIP';
+      const client = currentLoyaltyState.clientName || 'Cliente';
       const reward = currentLoyaltyState.reward || 'Un corte gratis';
+      const arPhone = formatArgentineWhatsApp(phone);
 
-      const msg = `¡Hola! Soy *${client}*. Ya completé los sellos de mi Tarjeta de Fidelidad en *${salon}* 💈.
+      const msg = `¡Hola! Soy *${client}*. Ya completé los sellos de mi Tarjeta de Fidelidad en *${salon}* 💈.\n\n¿Tendrías un turno disponible para canjear mi premio: *${reward}*? ¡Muchas gracias!`;
 
-` +
-                  `🏆 ¿Tendrías un turno disponible para canjear mi premio: *${reward}*? ¡Muchas gracias!`;
-
-      if (phone) {
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+      if (arPhone) {
+        window.open(`https://api.whatsapp.com/send?phone=${arPhone}&text=${encodeURIComponent(msg)}`, '_blank');
       } else {
         alert(msg);
       }
@@ -3042,11 +3065,11 @@ ${url}
           isPreview: currentLoyaltyState.isPreview || false
         });
       } else {
-        const phone = (currentLoyaltyState.salonPhone || '').replace(/[^0-9]/g, '');
+        const phone = formatArgentineWhatsApp(currentLoyaltyState.salonPhone);
         const client = currentLoyaltyState.clientName || 'Cliente';
         const msg = `¡Hola! Soy *${client}*. Quería consultar turnos disponibles para cortarme en la barbería 💈.`;
         if (phone) {
-          window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+          window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`, '_blank');
         } else {
           alert('Por favor contactate con la barbería para coordinar tu turno.');
         }
@@ -3624,10 +3647,10 @@ ${url}
         const cleanClient = cleanWhatsAppText(name);
         const msg = `¡Hola ${cleanSalon}! Soy *${cleanClient}*.\n✅ *Ya dejé agendado mi turno en el turnero online:*\n\n• *Servicio:* ${srvText}\n• *Día:* ${bookingState.selectedDateLabel}\n• *Horario:* ${hourStr} hs\n\n¡Muchas gracias!`;
 
-        const phone = (bookingState.salonPhone || '').replace(/[^0-9]/g, '');
+        const phone = formatArgentineWhatsApp(bookingState.salonPhone);
         const waUrl = phone 
-          ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`
-          : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+          ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`
+          : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
         window.open(waUrl, '_blank');
       };
     } else {
@@ -3686,13 +3709,13 @@ ${url}
           showToast('¡Horario reservado y bloqueado en la agenda!');
         }
 
-        let phone = (settings.salonPhone || '').replace(/\D/g, '');
+        let phone = formatArgentineWhatsApp(settings.salonPhone);
         const dateFormatted = typeof formatDateAR === 'function' ? formatDateAR(dateStr) : dateStr;
         const detailEl = document.getElementById('bookingServiceDetail');
         const notes = detailEl ? detailEl.value.trim() : '';
         let msg = `¡Hola ${settings.salonName || ''}! Soy ${clientDisplay}.\n✅ *Ya dejé agendado mi turno en el turnero online:*\n\n• Servicio: ${bookingState.selectedService}${notes ? ' (' + notes + ')' : ''}\n• Día: ${dateFormatted}\n• Horario: ${hourStr}\n\n¡Muchas gracias!`;
         msg = typeof cleanWhatsAppText === 'function' ? cleanWhatsAppText(msg) : msg;
-        const waUrl = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(msg)}` : `https://wa.me/?text=${encodeURIComponent(msg)}`;
+        const waUrl = phone ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}` : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
         window.open(waUrl, '_blank');
       };
     }
